@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal branding dan portofolio edukasi K3, electrical safety, dan process safety bersama Bayu Rosandy.">
+  <title>Bayu Rosandy | Personal Branding & Professional Portfolio</title>
+  <style>
+    :root{--navy:#10243a;--navy2:#173b5b;--red:#e34842;--ink:#182638;--muted:#64748b;--paper:#f5f7fa;--line:#dfe6ee;--white:#fff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,92%);margin:auto}
+    header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px}
+    .brand{font-size:15px;font-weight:850;letter-spacing:.08em;color:var(--navy)}
+    .brand span{color:var(--red)}
+    nav{display:flex;gap:25px;font-size:13px;font-weight:700;color:#425267}
+    nav a:hover,.text-link:hover{color:var(--red)}
+    .hero{background:linear-gradient(120deg,var(--navy) 0%,#173b5b 72%,#214c68 100%);color:white;overflow:hidden;position:relative}
+    .hero:after{content:"";position:absolute;width:480px;height:480px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:-150px;top:-180px;box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 110px rgba(255,255,255,.02)}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:55px;align-items:center;padding:88px 0 92px;position:relative;z-index:1}
+    .eyebrow{font-size:11px;letter-spacing:.19em;text-transform:uppercase;font-weight:800;color:#ff938d}
+    h1{font-size:clamp(38px,5.5vw,66px);line-height:1.08;letter-spacing:-.045em;margin:18px 0 22px;max-width:730px}
+    .hero p{font-size:17px;color:#d8e3ee;max-width:650px;margin:0 0 30px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;border-radius:7px;font-size:13px;font-weight:800;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:var(--red);color:white}.btn-primary:hover{background:#c93732;transform:translateY(-1px)}
+    .btn-outline{border-color:rgba(255,255,255,.4);color:white}.btn-outline:hover{background:rgba(255,255,255,.08)}
+    .hero-card{border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:27px;background:rgba(255,255,255,.07);backdrop-filter:blur(6px)}
+    .hero-card .big{font-size:45px;font-weight:850;line-height:1.1;letter-spacing:-.04em}
+    .hero-card .label{font-size:12px;color:#cbd8e5;margin-top:8px}
+    .mini-line{height:1px;background:rgba(255,255,255,.2);margin:22px 0}
+    .hero-card strong{display:block;font-size:14px;margin-bottom:4px}
+    .hero-card p{font-size:12px;margin:0;color:#cbd8e5}
+    section{padding:76px 0}
+    .section-head{max-width:690px;margin-bottom:34px}
+    .kicker{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:850;color:var(--red)}
+    h2{font-size:clamp(28px,3.5vw,40px);line-height:1.15;letter-spacing:-.035em;color:var(--navy);margin:9px 0 13px}
+    .section-head p{color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start}
+    .statement{background:white;border:1px solid var(--line);border-radius:12px;padding:28px;border-top:4px solid var(--red)}
+    .statement p{font-size:19px;font-weight:700;line-height:1.5;color:var(--navy);margin:0}
+    .about-copy p{margin-top:0;color:#536276}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .tag{font-size:11px;font-weight:750;color:var(--navy2);background:#e7edf4;padding:7px 10px;border-radius:4px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:white;border:1px solid var(--line);border-radius:11px;padding:25px;min-height:225px;transition:.2s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(16,36,58,.07)}
+    .card-no{font-size:12px;font-weight:850;color:var(--red);letter-spacing:.12em}
+    .card h3{font-size:19px;color:var(--navy);margin:19px 0 9px}
+    .card p{font-size:13px;color:var(--muted);margin:0}
+    .portfolio{background:#eaf0f5}
+    .portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .portfolio-item{background:var(--navy);color:white;padding:28px;border-radius:11px;min-height:185px;position:relative;overflow:hidden}
+    .portfolio-item:after{content:"";position:absolute;right:-25px;bottom:-65px;width:170px;height:170px;border:1px solid rgba(255,255,255,.15);border-radius:50%;box-shadow:0 0 0 25px rgba(255,255,255,.025)}
+    .portfolio-item .small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#ffaaa5;font-weight:850}
+    .portfolio-item h3{font-size:22px;line-height:1.25;max-width:370px;margin:13px 0 8px}
+    .portfolio-item p{font-size:13px;color:#cbd8e5;max-width:410px;margin:0}
+    .collab{background:white}
+    .collab-box{background:var(--navy);color:white;padding:42px;border-radius:14px;display:flex;justify-content:space-between;align-items:center;gap:35px}
+    .collab-box h2{color:white;max-width:590px;margin-top:8px}
+    .collab-box p{color:#d0dce8;max-width:610px;margin-bottom:0}
+    .contact-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
+    footer{padding:26px 0;background:#0b1a2a;color:#c4d0dc;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .note{font-size:11px;color:var(--muted);margin-top:18px}
+    @media(max-width:760px){
+      nav{gap:12px;font-size:11px}.nav{min-height:64px}.brand{font-size:12px}
+      .hero-grid,.about-grid,.portfolio-grid{grid-template-columns:1fr}
+      .hero-grid{padding:62px 0;gap:30px}.hero-card{max-width:360px}
+      section{padding:58px 0}.cards{grid-template-columns:1fr}
+      .card{min-height:unset}.collab-box{padding:28px;display:block}.contact-actions{margin-top:24px}
+    }
+    @media(max-width:420px){nav{gap:8px}nav a{font-size:10px}.hero p{font-size:15px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">BAYUROSANDY<span>.</span></a>
+    <nav aria-label="Navigasi utama">
+      <a href="#tentang">Tentang</a>
+      <a href="#fokus">Fokus</a>
+      <a href="#portfolio">Portofolio</a>
+      <a href="#kontak">Kolaborasi</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Safety • Process Safety • Education</div>
+        <h1>Membangun budaya keselamatan melalui pengetahuan.</h1>
+        <p>Ruang profesional untuk berbagi wawasan K3, electrical safety, dan process safety—menghubungkan pengetahuan teknis dengan praktik keselamatan di dunia kerja.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#portfolio">Lihat Portofolio</a>
+          <a class="btn btn-outline" href="#kontak">Diskusi Kolaborasi</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <div class="big">22K+</div>
+        <div class="label">Pengikut LinkedIn dalam komunitas profesional</div>
+        <div class="mini-line"></div>
+        <strong>Bayu Rosandy</strong>
+        <p>Berbagi wawasan profesional, pengalaman, dan konten edukasi yang relevan dengan dunia kerja.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="wrap about-grid">
+      <div class="statement">
+        <p>“Keselamatan bukan sekadar prosedur. Keselamatan perlu dipahami, dikomunikasikan, dan diterapkan.”</p>
+      </div>
+      <div class="about-copy">
+        <div class="kicker">Tentang</div>
+        <h2>Berbagi ilmu. Mendorong praktik yang lebih aman.</h2>
+        <p>Website ini menjadi pusat informasi profesional untuk memperkenalkan profil, karya, pengalaman, dan aktivitas kolaborasi. Fokus utamanya adalah menyampaikan topik teknis dengan bahasa yang mudah dipahami tanpa menghilangkan esensi keselamatannya.</p>
+        <p>Melalui konten dan aktivitas profesional, saya ingin berbagi pengetahuan yang praktis, mudah dipahami, dan bermanfaat bagi komunitas.</p>
+        <div class="tags">
+          <span class="tag">K3 / HSE</span><span class="tag">Process Safety</span><span class="tag">Electrical Safety</span><span class="tag">Safety Communication</span><span class="tag">Content Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fokus" style="background:#fff">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Area Fokus</div>
+        <h2>Konten yang dekat dengan tantangan industri.</h2>
+        <p>Topik edukasi dipilih untuk membantu audiens memahami bahaya, mengenali konsekuensi, dan menerapkan langkah pencegahan yang tepat.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-no">01 / K3</div>
+          <h3>Occupational Safety</h3>
+          <p>Identifikasi bahaya, pengendalian risiko, permit to work, LOTO, inspeksi, dan budaya keselamatan.</p>
+        </article>
+        <article class="card">
+          <div class="card-no">02 / PROCESS</div>
+          <h3>Process Safety</h3>
+          <p>Process Safety Information, PSSR, gas release, sistem drainase, dan pencegahan kejadian besar.</p>
+        </article>
+        <article class="card">
+          <div class="card-no">03 / ELECTRICAL</div>
+          <h3>Electrical Safety</h3>
+          <p>Arc flash, grounding and bonding, electrical shock pathway, serta bahaya kabel sementara.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Portofolio</div>
+        <h2>Pengetahuan yang dikemas untuk dibagikan.</h2>
+        <p>Bagian ini dapat dikembangkan menjadi galeri poster, artikel, studi kasus, publikasi, dan dokumentasi kegiatan.</p>
+      </div>
+      <div class="portfolio-grid">
+        <article class="portfolio-item">
+          <div class="small">Educational Content</div>
+          <h3>Safety Awareness & Technical Explainers</h3>
+          <p>Materi visual ringkas untuk menjelaskan konsep K3 dan process safety secara praktis.</p>
+        </article>
+        <article class="portfolio-item">
+          <div class="small">Professional Network</div>
+          <h3>LinkedIn Community & Knowledge Sharing</h3>
+          <p>Berbagi wawasan, membangun percakapan profesional, dan menjangkau audiens industri.</p>
+        </article>
+        <article class="portfolio-item">
+          <div class="small">Brand Collaboration</div>
+          <h3>Product Education & Industry Awareness</h3>
+          <p>Kolaborasi konten yang menghubungkan solusi, alat, dan teknologi dengan kebutuhan keselamatan.</p>
+        </article>
+        <article class="portfolio-item">
+          <div class="small">Community</div>
+          <h3>Bayu Rosandy</h3>
+          <p>Ruang personal untuk berbagi pengetahuan, karya, dan kolaborasi profesional.</p>
+        </article>
+      </div>
+      <p class="note">Tips: tambahkan gambar poster asli dan tautan ke unggahan LinkedIn agar portofolio ini semakin kuat.</p>
+    </div>
+  </section>
+
+  <section class="collab" id="kontak">
+    <div class="wrap">
+      <div class="collab-box">
+        <div>
+          <div class="eyebrow">Open for Collaboration</div>
+          <h2>Mari hadirkan edukasi keselamatan yang berdampak.</h2>
+          <p>Terbuka untuk diskusi mengenai kolaborasi konten edukasi, kampanye keselamatan, publikasi profesional, dan pengembangan materi awareness industri.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/bayu-rosandy-1a9b54229/" target="_blank" rel="noopener noreferrer">Temukan di LinkedIn ↗</a>
+          <a class="btn btn-outline" href="mailto:hello@bayurosandy.example">Email</a>
+        </div>
+      </div>
+      <p class="note">Sebelum dipublikasikan, ganti alamat email contoh dengan email yang aktif.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span><strong>BAYU ROSANDY</strong> · Personal Branding & Professional Portfolio</span>
+    <span>© <span id="year">2026</span> Bayu Rosandy. Personal branding & professional portfolio.</span>
+  </div>
+</footer>
+</body>
+</html>
